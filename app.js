@@ -9,7 +9,7 @@ operador = Number(prompt("Ingrese la Cobertura:\n1 -basica\n2 -MX intermedia\n3 
 
 while(operador != 4){
     valir1 = 1600
-    valor2 = 1300
+    valor2 = 4000
     valor3 = 10000
     switch(operador){
         case 1:
@@ -25,3 +25,4 @@ while(operador != 4){
     }
     operador = Number(prompt("Ingrese la Cobertura:\n1 -basica\n2 -MX intermedia\n3 -Todo riesgo C/F de $20.000\n4 -para salir"))
 }
+ 
