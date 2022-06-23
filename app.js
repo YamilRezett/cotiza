@@ -15,7 +15,7 @@ enviar.addEventListener("click", () =>{
     content.innerHTML =`
     <h2>marca: ${marca}</h2>
     <h2>año: ${año}</h2> 
-    <h2>año: ${valor}</h2> 
+    <h2>valor: ${valor}</h2> 
     `;
     datos.append(content)
           })

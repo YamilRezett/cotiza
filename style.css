@@ -2,7 +2,7 @@ body {
     background-color: gray;
     display: flex;
     flex-direction: column;   
-    margin: 20px;
+    margin: 30px 100px;
  }
 h1 {
     text-align: center;
@@ -11,12 +11,13 @@ h1 {
     color: white;
     font-size: xx-large;
 }
+
 #enviar{
-    margin: 8px;
+    margin: 8px 100px;
 }
 
 #borrar{
-    margin: 8px;
+    margin: 8px 100px;
 }
 
 #datos{
