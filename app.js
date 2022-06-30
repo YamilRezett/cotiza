@@ -1,28 +1,61 @@
-let enviar = document.getElementById("enviar")
-let datos = document.getElementById("datos")
-let borrar = document.getElementById("borrar")
+// let enviar = document.getElementById("enviar")
+// let datos = document.getElementById("datos")
+// let borrar = document.getElementById("borrar")
 
-datos.hidden = "none"
+// datos.hidden = "none"
 
-enviar.addEventListener("click", () =>{
-    datos.hidden=""
-    let marca = document.querySelector("#marca").value 
-    let año = document.querySelector("#año").value
-    let valor =document.querySelector("#valor").value;
+// enviar.addEventListener("click", () =>{
+//     datos.hidden=""
+//     let marca = document.querySelector("#marca").value 
+//     let año = document.querySelector("#año").value
+//     let valor =document.querySelector("#valor").value;
 
-    const content = document.createElement("div")
+//     const content = document.createElement("div")
 
-    content.innerHTML =`
-    <h2>marca: ${marca}</h2>
-    <h2>año: ${año}</h2> 
-    <h2>valor: ${valor}</h2> 
-    `;
-    datos.append(content)
-          })
+//     content.innerHTML =`
+//     <h2>marca: ${marca}</h2>
+//     <h2>año: ${año}</h2> 
+//     <h2>valor: ${valor}</h2> 
+//     `;
+//     datos.append(content)
+//           })
 
-borrar.addEventListener("click", () =>{
-    datos.innerHTML = ""
-    datos.hidden = "none"
+// borrar.addEventListener("click", () =>{
+//     datos.innerHTML = ""
+//     datos.hidden = "none"
+// })
+
+let producto = [
+    { id: 1, name: "base", precio: 1600},
+    { id: 2, name: "intermedio", precio: 4500},
+    { id: 3, name: "completo", precio: 11500},
+];
+
+const guardar = (clave, valor) => { localStorage.setItem(clave, valor); };
+
+for(const produc of producto){
+    guardar(produc.id, JSON.stringify(produc));
+}
+
+localStorage.setItem("productos", JSON.stringify(producto));
+
+const coberturas = document.querySelector(".coberturas");
+const suggestionsPanel  = document.querySelector(".suggestions");
+
+coberturas.addEventListener("keyup", ()=> {
+    const input = coberturas.value
+
+    const suggestions = producto.filter((producto)=>{
+        return producto.precio.startsWith(input)
+    })
+
+suggestionsPanel.innerHTML= ""    
+
+ suggestions.forEach((suggested) =>{
+    const div = document.createElement("div");
+    div.innerHTML = suggested.name
+    suggestionsPanel.append(div);
+ })
 })
 
 // const marca = prompt("Ingresa la marca del vehiculo");
@@ -67,13 +100,13 @@ borrar.addEventListener("click", () =>{
     
 // }
 
-let ControlDeProductos = [
-    {nombre: "Cobertura1", precio: 1600},
-    {nombre: "Cobertura2", precio: 4500},
-    {nombre: "Cobertura3", precio: 11500},
-    ];
-let nombresControlDeProductos = [];
+// let ControlDeProductos = [
+//     {nombre: "Cobertura1", pre: 1600},
+//     {nombre: "Cobertura2", pre: 4500},
+//     {nombre: "Cobertura3", pre: 11500},
+//     ];
+// let nombresControlDeProductos = [];
 
-nombresControlDeProductos.push(ControlDeProductos.map(elemento => elemento.nombre));
+// nombresControlDeProductos.push(ControlDeProductos.map(elemento => elemento.nombre));
 
-console.log(nombresControlDeProductos);
+// console.log(nombresControlDeProductos);

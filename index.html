@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
-  <h1>Cotizador</h1>
-    
+ 
 <body>
-        <label for="marca">Marca</label>
+   <!-- <h1>Cotizador</h1> -->
+    
+        <!-- <label for="marca">Marca</label>
         <input type="text" id="marca">
         <label for="año">Año</label>
         <input type="number" id="año">
@@ -18,18 +19,22 @@
         <input type="number" id="valor">
         <button id="enviar">Enviar</button>
         <button id="borrar">borrar</button>
-        <div id="datos"></div>
+        <div id="datos"></div> -->
 
-        <div>
-          <h1>Coberturas</h1>
+    
+      <div class="container">
+        <h1>Coberturas</h1>
           <ul>
             <li>Base</li>
             <li>Intermedia</li>
             <li>Completa</li>
           </ul>
-          <input type="text" id="coberturas">
+          <input class="coberturas" type="text">
+          <div class="suggestions"></div>
+      </div>
+   
+         
 
-        </div>
 
    
     <script src="/app.js"></script>
