@@ -37,7 +37,8 @@ for(const produc of producto){
     guardar(produc.id, JSON.stringify(produc));
 }
 
-localStorage.setItem("productos", JSON.stringify(producto));
+let data = localStorage.setItem("producto");
+console.log(JSON.stringify(data));
 
 const coberturas = document.querySelector(".coberturas");
 const suggestionsPanel  = document.querySelector(".suggestions");
